@@ -55,14 +55,4 @@
         android:id="@+id/textView4"
         android:textSize="18sp" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/cast_album_art_placeholder"
-        android:layout_marginTop="19dp"
-        android:id="@+id/imageButton"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
-
 </RelativeLayout>

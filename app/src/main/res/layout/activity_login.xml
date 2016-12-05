@@ -11,13 +11,6 @@
     tools:context="com.example.joovinaud.projmobile.LoginActivity">
 
     <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -77,9 +70,8 @@
                 android:text="Cadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/cadastro_btn"
-                android:onClick="cadastroIntent"
-                />
+                android:id="@+id/button6"
+                android:onClick="cadastrar"/>
 
             <Button
                 android:text="Entrar com conta google"

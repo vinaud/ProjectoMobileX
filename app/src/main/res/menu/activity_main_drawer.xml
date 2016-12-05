@@ -16,12 +16,14 @@
         <item
             android:id="@+id/planos"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Meus Planos" />
+            android:title="Meus Planos"
+            android:visible="false"/>
 
         <item
             android:id="@+id/planosCad"
             android:icon="@drawable/ic_menu_send"
-            android:title="Cadastrar novo plano" />
+            android:title="Cadastrar novo plano"
+            android:visible="false"/>
     </group>
 
 
