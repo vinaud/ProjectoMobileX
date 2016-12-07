@@ -37,8 +37,25 @@ public class ExercicioAdapter extends ArrayAdapter<Exercicio> {
        // }
         Exercicio item = getItem(position);
         if (item!= null) {
-           /* ImageView imagem = (ImageView) view.findViewById(R.id.photoView);
-            imagem.setImageResource(R.drawable.caminhada);*/
+           ImageView imagem = (ImageView) view.findViewById(R.id.photoView);
+           switch(item.getId()){
+               case "1" :
+                   imagem.setImageResource(R.drawable.caminhada);
+                   break;
+               case "2" :
+                   imagem.setImageResource(R.drawable.rotacao);
+                   break;
+               case "3" :
+                   imagem.setImageResource(R.drawable.peitoral);
+                   break;
+               case "4" :
+                   imagem.setImageResource(R.drawable.remo);
+                   break;
+               default:
+                   imagem.setImageResource(R.drawable.caminhada);
+                   break;
+           }
+
 
             TextView titulo = (TextView)
                     view.findViewById(R.id.texer);
