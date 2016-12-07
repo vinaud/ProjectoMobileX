@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
@@ -37,13 +38,23 @@ public class ExerFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_exer, container,
                 false);
 
-      /*  IExercicioDAO dao2 = new ExercicioDAOMock();
+        IExercicioDAO dao2 = new ExercicioDAOMock();
         List<Exercicio> exercicios = dao2.getExercicios();
 
-        /*ListView = (ListView) v.findViewById(R.id.list);
+        ListView = (ListView) v.findViewById(R.id.lv2);
         adapter = new ExercicioAdapter(this.getContext(), R.layout.list_exercicios, exercicios);
 
-        ListView.setAdapter(adapter);*/
+        ListView.setAdapter(adapter);
+        ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Exercicio entry= (Exercicio) parent.getAdapter().getItem(position);
+                Intent intent = new Intent(getContext(), AtividadeActivity.class);
+                intent.putExtra("id", entry.getId());
+                startActivity(intent);
+            }
+        });
         // Inflate the layout for this fragment
         return v;
     }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -80,5 +81,17 @@ public class AcademiaActivity extends AppCompatActivity {
         adapter = new ExercicioAdapter(this, R.layout.list_exercicios, exercicios);
 
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Exercicio entry= (Exercicio) parent.getAdapter().getItem(position);
+                Intent intent = new Intent(AcademiaActivity.this,AtividadeActivity.class);
+                intent.putExtra("id", entry.getId());
+                startActivity(intent);
+            }
+        });
+
     }
 }

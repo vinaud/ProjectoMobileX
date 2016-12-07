@@ -130,10 +130,10 @@ public class MainActivity extends AppCompatActivity
         }
 
         else if (id == R.id.exer) {
-           // fragment = new ExerFragment();
-           // title  = "Exercicios";
-            Intent i = new Intent(this, ExerActivity.class);
-            startActivity(i);
+            fragment = new ExerFragment();
+            title  = "Exercicios";
+            //Intent i = new Intent(this, ExerActivity.class);
+           // startActivity(i);
         }
 
         if (fragment != null) {
