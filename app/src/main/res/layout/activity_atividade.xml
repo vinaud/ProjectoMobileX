@@ -11,36 +11,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.joovinaud.projmobile.AtividadeActivity">
 
-    <TextView
-        android:text="Aparelho : Nome do aparelho"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView2"
-        android:textSize="24sp"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="Descrição do aparelho.....  "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="31dp"
-        android:id="@+id/textView3" />
-
     <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/apDesc"
+        android:layout_alignLeft="@+id/apDesc"
+        android:layout_alignStart="@+id/apDesc"
         android:layout_marginTop="63dp"
         android:id="@+id/videoView" />
 
@@ -48,11 +24,30 @@
         android:text="Vídeo:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/apDesc"
         android:layout_alignLeft="@+id/videoView"
         android:layout_alignStart="@+id/videoView"
         android:layout_marginTop="23dp"
         android:id="@+id/textView4"
         android:textSize="18sp" />
+
+    <TextView
+        android:text="Aparelho : Nome do aparelho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/apTitle"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Descrição do aparelho.....  "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/apDesc"
+        android:layout_below="@+id/apTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

@@ -1,10 +1,13 @@
 package com.example.joovinaud.projmobile;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -13,16 +16,12 @@ import android.widget.EditText;
 public class LoginActivity extends AppCompatActivity  {
 
 
-
-
-
-
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    SharedPreferences sharedpreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +34,9 @@ public class LoginActivity extends AppCompatActivity  {
 
 
         mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
+
+        sharedpreferences = getSharedPreferences("User", 0);
+
     }
 
 
@@ -53,19 +54,34 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
-
-        protected void cadastroIntent(View view)
-        {
-            Intent i = new Intent(view.getContext(), CadastroActivity.class);
-            startActivity(i);
-
-        }
+    public void cadastrar(View view)
+    {
+        Intent i = new Intent(this,CadastroActivity.class);
+        startActivity(i);
+    }
 
     public void logar(View view) {
+        String login = sharedpreferences.getString("email", null);
+      //  System.out.print(login);
+        String senha =  sharedpreferences.getString("senha", null);
 
-        //criar metodo de verificar login
-        Intent i = new Intent(view.getContext(), MainActivity.class);
-        startActivity(i);
+
+
+
+        if(mEmailView.getText().toString().equals(login) && mPasswordView.getText().toString().equals(senha))
+        {
+            Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("Login","true");
+            i.putExtra("mail",login);
+
+            startActivity(i);
+            Toast.makeText(this, "Bem vindo(a) "+ login , Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this, "Usuario ou senha invalidos", Toast.LENGTH_LONG).show();
+        }
+
     }
 }
 

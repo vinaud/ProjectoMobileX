@@ -10,6 +10,7 @@ import domain.Academia;
  */
 
 public class AcademiaDAOMock implements IAcademiaDAO {
+
     private ArrayList<Academia> lista = new ArrayList<Academia>();
 
     public AcademiaDAOMock() {
